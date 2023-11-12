@@ -5,31 +5,31 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     devtool: false,
-    entry: "./src/index.ts",
+    entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "js/[name].js",
         assetModuleFilename: 'images/[hash][ext][query]'
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.ts', '.js', '.tsx'],
     },
     module: {
         rules: [
+            // {
+            //     test: /\.ts|.tsx$/,
+            //     exclude: /node_modules/,
+            //     use: [
+            //         {
+            //             loader: 'babel-loader',
+            //             // options: {
+            //             //     presets: ['@babel/preset-typescript']
+            //             // }
+            //         }
+            //     ],
+            // },
             {
-                test: /\.ts$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-typescript']
-                        }
-                    }
-                ],
-            },
-            {
-                test: /\.js$/,
+                test: /\.js|.ts|.tsx$/,
                 exclude: /node_modules/,
                 use: { 
                     loader: 'babel-loader' 
@@ -38,11 +38,11 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|webp)$/,
                 type: "asset/resource",
-                // parser: {
-                //     dataUrlCondition: {
-                //         maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
-                //     },
-                // },
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 10 * 1024, // 小于10kb的图片会被base64处理
+                    },
+                },
                 // generator: {
                 //     // 将图片文件输出到 static/imags 目录中
                 //     // 将图片文件命名 [hash:8][ext][query]
@@ -66,4 +66,4 @@ module.exports = {
             template: "./src/index.html"
         })
     ]
-}
+};

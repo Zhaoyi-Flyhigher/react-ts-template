@@ -3,7 +3,7 @@
  */
 const commonConfig = require("./webpack.base.config");
 const {merge} = require("webpack-merge");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const prodConfig = {
     mode: NODE_ENV,
@@ -20,8 +20,10 @@ const prodConfig = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].css',
+        }),
     ]
-}
+};
 
-module.exports = merge(commonConfig, prodConfig)
+module.exports = merge(commonConfig, prodConfig);

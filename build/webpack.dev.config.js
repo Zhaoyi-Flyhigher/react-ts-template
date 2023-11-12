@@ -1,17 +1,17 @@
 /**
  * webpack开发环境配置
  */
-const path = require("path")
+const path = require("path");
 const webpack = require('webpack'); // 用于访问内置插件
 const commonConfig = require("./webpack.base.config");
 const {merge} = require("webpack-merge");
-const ESLintPlugin = require('eslint-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const devConfig = {
     mode: NODE_ENV,
     devServer: {
         // 静态资源目录的路径，设置该参数可以在服务器中访问这些静态资源
-        static: path.join(__dirname,"../public"),
+        static: path.join(__dirname,"public"),
         // 启用 gzip 压缩，默认是关闭的
         compress: true,
         // 服务器主机名，默认是 localhost
@@ -48,7 +48,7 @@ const devConfig = {
         // es-lint
         new ESLintPlugin({extensions: [".js",",ts"]})
     ]
-}
+};
 
-console.log(merge(commonConfig, devConfig));
-module.exports = merge(commonConfig, devConfig)
+// console.log(merge(commonConfig, devConfig));
+module.exports = merge(commonConfig, devConfig);
