@@ -1,7 +1,8 @@
-{
+module.exports = {
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "es6": true
     },
     "parser": "@typescript-eslint/parser",
     "extends": [
@@ -13,9 +14,12 @@
     ],
     // 解析器配置
     "parserOptions": {
+        "parser": "@typescript-eslint/parser",
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        // "project": "./tsconfig.json",
+        "tsconfigRootDir": __dirname
         // "ecmaVersion": 2018,
         // "sourceType": "module"
     },
@@ -28,12 +32,16 @@
     "plugins": [
         "@typescript-eslint",
         "react"
+        // "react-hooks"
         // "jsx-a11y"
     ],
     "rules": {
         "@typescript-eslint/no-var-requires": "off",
         // 分号
-        "semi": ["error", "always"]
+        "semi": [
+            "error",
+            "always"
+        ]
         // // 禁止缩进错误
         // "indent": 0,
         // // 关闭不允许使用 no-tabs
@@ -77,5 +85,17 @@
         // "react/prefer-stateless-function": 0,
         // "react/jsx-uses-react": "error",
         // "react/jsx-uses-vars": "error"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
     }
 }
