@@ -2,11 +2,11 @@
 基于webpack@5,React@18，react-router-dom@6，redux@8，antd@5模板
 
 ## 使用
-git clone --
-npm install
-npm run dev
+git clone --  
+npm install  
+npm run dev  
 
 ## 开发环境
-npm run build:dev
+npm run build:dev  
 ## 生产环境
-npmrun build
+npmrun build  
