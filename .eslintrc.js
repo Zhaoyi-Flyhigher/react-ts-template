@@ -31,8 +31,8 @@ module.exports = {
     // 第三方插件
     "plugins": [
         "@typescript-eslint",
-        "react"
-        // "react-hooks"
+        "react",
+        "react-hooks"
         // "jsx-a11y"
     ],
     "rules": {
@@ -41,7 +41,17 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        // 允许在 .js 和 .jsx .tsx文件中使用  jsx
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+        // jsx > 紧跟着属性
+        "react/jsx-closing-bracket-location": [1, "after-props"],
+        // 不区分是否是 无状态组件
+        "react/prefer-stateless-function": 0,
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "@typescript-eslint/no-explicit-any": "error"
         // // 禁止缩进错误
         // "indent": 0,
         // // 关闭不允许使用 no-tabs
@@ -77,14 +87,7 @@ module.exports = {
         // "import/no-extraneous-dependencies": 0,
         // // 引用时候根据根目录基础
         // "import/no-unresolved": 0,
-        // // 允许在 .js 和 .jsx .tsx文件中使用  jsx
-        // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
-        // // jsx > 紧跟着属性
-        // "react/jsx-closing-bracket-location": [1, "after-props"],
-        // // 不区分是否是 无状态组件
-        // "react/prefer-stateless-function": 0,
-        // "react/jsx-uses-react": "error",
-        // "react/jsx-uses-vars": "error"
+        
     },
     "settings": {
         "import/resolver": {
@@ -98,4 +101,4 @@ module.exports = {
             }
         }
     }
-}
+};

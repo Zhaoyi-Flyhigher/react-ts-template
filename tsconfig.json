@@ -13,9 +13,7 @@
       "baseUrl": ".",
       "types": [],
       "paths": {
-        "@/*": [
-          "src/*"
-        ]
+        "@/*": ["src/*"]
       },
       "lib": [
         "esnext",
