@@ -10,7 +10,7 @@ npm run dev
 ## 开发环境
 npm run build:dev  
 ## 生产环境
-npmrun build  
+npm run build  
 
 
 持续优化中...
