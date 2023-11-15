@@ -1,6 +1,6 @@
 ## React模板
 基于webpack@5,React@18，react-router-dom@6，redux@8，antd@5模板
-内部集成TypeScript，eslint
+内部集成TypeScript
 
 ## 使用
 git clone --  
