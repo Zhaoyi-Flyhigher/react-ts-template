@@ -11,7 +11,7 @@ const App: React.FC = () => {
         <div className="container">
             <h1 className="title">欢迎使用当前React模板</h1>
             <p>基于React@18，React-Router-dom@6, redux@8, antd@5</p>
-            <p>内部集成了TypeScript类型校验，eslint检查</p>
+            <p>内部集成了TypeScript类型校验</p>
             <Divider className="divider">路由</Divider>
             <div className="jump-btn">
                 <Button 

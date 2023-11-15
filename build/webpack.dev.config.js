@@ -5,7 +5,6 @@ const path = require("path");
 const webpack = require('webpack'); // 用于访问内置插件
 const commonConfig = require("./webpack.base.config");
 const {merge} = require("webpack-merge");
-const ESLintPlugin = require('eslint-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const devConfig = {
     mode: NODE_ENV,
@@ -45,8 +44,6 @@ const devConfig = {
     plugins: [
         // 模块热替换插件
         new webpack.HotModuleReplacementPlugin(),
-        // es-lint
-        new ESLintPlugin({extensions: [".js",",ts"]})
     ]
 };
 
